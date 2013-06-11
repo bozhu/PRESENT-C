@@ -39,8 +39,8 @@
  * @date   July 21, 2009
  */
 
-#ifndef __PRESENT_H__
-#define __PRESENT_H__
+#ifndef PRESENT_H
+#define PRESENT_H
 
 // comment this out if this is used on PC
 #define __UINT_T__
@@ -308,4 +308,4 @@ void present_rounds(const uint8_t *plain, const uint8_t *key, const uint8_t roun
 	}
 }
 
-#endif /* __PRESENT_H__ */
+#endif /* PRESENT_H */

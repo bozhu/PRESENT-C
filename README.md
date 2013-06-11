@@ -12,15 +12,15 @@ There are two interfaces:
 
 1. The full-round encryption function:
 ```c
-    void present(uint8_t *plain, uint8_t *key, uint8_t *cipher)
+    void present(const uint8_t *plain, const uint8_t *key, uint8_t *cipher)
 ```
-Before using this function, the plaintext should have already been placed in the array `plain`, and the 80-bit secret key should also be arranged at `key`. After the encryption is done, the ciphertext will be computed and copied into `cipher`. Please note that the areas identified by `plain` and `cipher` can overlap with each other (also key and cipher).
+Before using this function, the plaintext should have already been placed in the array `plain`, and the 80-bit secret key should also be arranged at `key`. After the encryption is done, the ciphertext will be computed and copied into `cipher`. Please note that the areas identified by `plain` and `cipher` can overlap with each other (also `key` and `cipher`).
 
 2. We also provide an interface in which the rounds of encryption can be specified:
 ```c
-    void present_rounds(uint8_t *plain, uint8_t *key, uint8_t rounds, uint8_t *cipher)
+    void present_rounds(const uint8_t *plain, const uint8_t *key, const uint8_t rounds, uint8_t *cipher)
 ```
-Especially, if `rounds` is equal to 31, it will be a full-round encryption, same as present().
+Especially, if `rounds` is equal to 31, it will be a full-round encryption, same as `present()`.
 
 ## References
 
